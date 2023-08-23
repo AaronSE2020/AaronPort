@@ -1,0 +1,14 @@
+C:\Users\Tcp\source\repos\AaronPort\BankAccount\bin\Debug\net6.0\BankAccount.exe
+C:\Users\Tcp\source\repos\AaronPort\BankAccount\bin\Debug\net6.0\BankAccount.deps.json
+C:\Users\Tcp\source\repos\AaronPort\BankAccount\bin\Debug\net6.0\BankAccount.runtimeconfig.json
+C:\Users\Tcp\source\repos\AaronPort\BankAccount\bin\Debug\net6.0\BankAccount.dll
+C:\Users\Tcp\source\repos\AaronPort\BankAccount\bin\Debug\net6.0\BankAccount.pdb
+C:\Users\Tcp\source\repos\AaronPort\BankAccount\obj\Debug\net6.0\BankAccount.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tcp\source\repos\AaronPort\BankAccount\obj\Debug\net6.0\BankAccount.AssemblyInfoInputs.cache
+C:\Users\Tcp\source\repos\AaronPort\BankAccount\obj\Debug\net6.0\BankAccount.AssemblyInfo.cs
+C:\Users\Tcp\source\repos\AaronPort\BankAccount\obj\Debug\net6.0\BankAccount.csproj.CoreCompileInputs.cache
+C:\Users\Tcp\source\repos\AaronPort\BankAccount\obj\Debug\net6.0\BankAccount.dll
+C:\Users\Tcp\source\repos\AaronPort\BankAccount\obj\Debug\net6.0\refint\BankAccount.dll
+C:\Users\Tcp\source\repos\AaronPort\BankAccount\obj\Debug\net6.0\BankAccount.pdb
+C:\Users\Tcp\source\repos\AaronPort\BankAccount\obj\Debug\net6.0\BankAccount.genruntimeconfig.cache
+C:\Users\Tcp\source\repos\AaronPort\BankAccount\obj\Debug\net6.0\ref\BankAccount.dll

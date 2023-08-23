@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "miXDoBvcpkbi2DHWsT2zbdKkNicxjzbeqWrvUec85WDV2m1l0qaLf2OsML+phSbPIHR/JPkixJwlaAqbV2+GwQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tcp\\source\\repos\\AaronPort\\Trade_Master1\\Trade_Master1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tcp\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512"
+  ],
+  "logs": []
+}
