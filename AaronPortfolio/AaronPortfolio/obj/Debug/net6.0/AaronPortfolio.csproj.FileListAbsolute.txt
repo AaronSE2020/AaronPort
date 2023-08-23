@@ -6,7 +6,6 @@ C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\bin\Debug\net6
 C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\bin\Debug\net6.0\AaronPortfolio.runtimeconfig.json
 C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\bin\Debug\net6.0\AaronPortfolio.dll
 C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\bin\Debug\net6.0\AaronPortfolio.pdb
-C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\obj\Debug\net6.0\AaronPortfolio.csproj.AssemblyReference.cache
 C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\obj\Debug\net6.0\AaronPortfolio.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\obj\Debug\net6.0\AaronPortfolio.AssemblyInfoInputs.cache
 C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\obj\Debug\net6.0\AaronPortfolio.AssemblyInfo.cs
