@@ -1,0 +1,7 @@
+C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\obj\Release\net6.0\PubTmp\Out\AaronPortfolio.exe
+C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\obj\Release\net6.0\PubTmp\Out\AaronPortfolio.dll
+C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\obj\Release\net6.0\PubTmp\Out\AaronPortfolio.deps.json
+C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\obj\Release\net6.0\PubTmp\Out\AaronPortfolio.runtimeconfig.json
+C:\Users\Tcp\source\repos\AaronPort\AaronPortfolio\AaronPortfolio\obj\Release\net6.0\PubTmp\Out\AaronPortfolio.pdb
