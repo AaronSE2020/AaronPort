@@ -17,7 +17,24 @@ namespace AaronPortfolio.Controllers
         {
             return View();
         }
+        public IActionResult About()
+        {
+            return View();
+        }
+        public IActionResult Product() 
+        {
+            return View();
+        }
 
+        public IActionResult NasaPicture()
+        {
+            return View();
+        }
+
+        public IActionResult AboutModel()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();

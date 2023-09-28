@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34024.191
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureTreasureHunt", "AzureTreasureHunt.csproj", "{6AF08957-3762-45F7-8A0D-1D1F0F5D2C4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C23B369E-0817-4863-80A9-CF8BBB3D9746}"
+	ProjectSection(SolutionItems) = preProject
+		index.cshtml = index.cshtml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AF08957-3762-45F7-8A0D-1D1F0F5D2C4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AF08957-3762-45F7-8A0D-1D1F0F5D2C4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AF08957-3762-45F7-8A0D-1D1F0F5D2C4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AF08957-3762-45F7-8A0D-1D1F0F5D2C4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6EE7115A-9644-4FB6-A180-9C97F76DDDB0}
+	EndGlobalSection
+EndGlobal

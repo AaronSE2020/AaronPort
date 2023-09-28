@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel 
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<button asp-page-handler="GenerateClue" class="btn btn-primary">Generate Clue</button>
+<button asp-page-handler="FetchClue" class="btn btn-primary">Fetch Clue</button>
+<div id="clueArea"></div>
+<div id="multimediaArea"></div>
+
+<!-- HTML element that will glow -->
+<div id="glowingElement" class="@((Model.IsGlowing) ? "active" : "")">Click Me</div>
+
+<!-- CSS to define the glowing effect (implement as needed) -->
+<style>
+    .active {
+        /* Define glowing effect styles (e.g., box-shadow, animation) */
+    }
+</style>

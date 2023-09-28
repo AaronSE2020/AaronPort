@@ -16,3 +16,26 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.container {
+    display: flex;
+}
+
+.header, .content, .sidebar, .footer {
+    flex: 1;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+}
+
+.button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}

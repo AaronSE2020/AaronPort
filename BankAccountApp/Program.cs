@@ -6,8 +6,8 @@ namespace BankAccountApp
 {
 	class Program
 	{
-		static string connectionString = "Server=AARON-KING\\SQLEXPRESS;Initial Catalog=StockPicks;Integrated Security=True;";
-
+		static string connectionString = "Server=AARON-KING\\SQLEXPRESS;Database=StockPicks;Integrated Security=True;TrustServerCertificate=True;";
+		//static string connectionString = "Server=AARON-KING\\SQLEXPRESS;Initial Catalog=StockPicks;Integrated Security=True;";
 		static void Main(String[] args)
 		{
 			while (true) 
