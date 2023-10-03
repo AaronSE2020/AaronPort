@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "28V0mwL8D5/fms4kl0mnzPGowiSinSwcrBCn2IUeFU8=",
+  "Hash": "MfxymxdjVP44CsvLAyVaqP9XDeZ+fiKk80OFkNW9hVc=",
   "Source": "AaronPortfolio",
   "BasePath": "_content/AaronPortfolio",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Tcp\\source\\repos\\AaronPort\\AaronPortfolio\\AaronPortfolio\\wwwroot\\js\\nasaApiModule.js",
+      "SourceId": "AaronPortfolio",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Tcp\\source\\repos\\AaronPort\\AaronPortfolio\\AaronPortfolio\\wwwroot\\",
+      "BasePath": "_content/AaronPortfolio",
+      "RelativePath": "js/nasaApiModule.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\nasaApiModule.js"
     },
     {
       "Identity": "C:\\Users\\Tcp\\source\\repos\\AaronPort\\AaronPortfolio\\AaronPortfolio\\wwwroot\\js\\site.js",

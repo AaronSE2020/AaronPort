@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Tcp\\source\\repos\\AaronPort\\AaronPortfolio\\AaronPortfolio\\wwwroot\\js\\nasaApiModule.js",
+      "PackagePath": "staticwebassets\\js\\nasaApiModule.js"
+    },
+    {
       "Id": "C:\\Users\\Tcp\\source\\repos\\AaronPort\\AaronPortfolio\\AaronPortfolio\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

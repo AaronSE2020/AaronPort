@@ -31,6 +31,16 @@ namespace AaronPortfolio.Controllers
             return View();
         }
 
+        public IActionResult NasaPicture2()
+        {
+            return View();
+        }
+
+        public IActionResult FavoritesGallery()
+        {
+            return View();
+        }
+
         public IActionResult AboutModel()
         {
             return View();

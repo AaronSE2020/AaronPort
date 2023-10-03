@@ -67,3 +67,4 @@ function switchNumber() {
 }
 
 setInterval(switchNumber, 1000); // Switch numbers every 1000 milliseconds (1 second)
+
