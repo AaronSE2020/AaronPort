@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore.Design;
 using TaskManagerProject.Data;
 using TaskManagerProject.Services;
 using Microsoft.EntityFrameworkCore;

@@ -11,7 +11,7 @@ namespace TaskManagerProject.Models
         public DateTime TaskDate { get; set; }
         public string TaskDescription { get; set; }
         public string AssignedTo { get; set; }
-        public string Priority { get; set; }
+        public int Priority { get; set; }
         public string Status { get; set; }
         public DateTime? DueDate { get; set; }
         public int? EstimatedTime { get; set; }

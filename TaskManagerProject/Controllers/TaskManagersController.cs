@@ -22,6 +22,13 @@ namespace TaskManagerProject.Controllers
             _taskManagerService = taskManagerService;
         }
 
+        // GET: TaskManagers/Create
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         // GET: TaskManagers
         public async Task<IActionResult> Index()
         {
