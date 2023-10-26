@@ -27,7 +27,7 @@ namespace TaskManagerProject.Services
         }
 
         // Fetch a specific task by ID
-        public async Task<TaskManager> GetTaskByIdAsync(int id, TaskManagerProjectContext _context)
+        public async Task<TaskManager> GetTaskByIdAsync(int id)
         {
             return await _context.TaskManager.FirstOrDefaultAsync(m => m.ID == id);
         }
@@ -49,7 +49,7 @@ namespace TaskManagerProject.Services
         // Delete a task by ID
         public async Task DeleteTaskAsync(int id)
         {
-            var task = await GetTaskByIdAsync(id, Get_context());
+            var task = await GetTaskByIdAsync(id);
             if (task != null)
             {
                 _context.TaskManager.Remove(task);
@@ -63,9 +63,6 @@ namespace TaskManagerProject.Services
             return _context.TaskManager.Any(e => e.ID == id);
         }
 
-        internal Task<string?> GetTaskByIdAsync(int value)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
