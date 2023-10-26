@@ -7,88 +7,61 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TaskManagerProject.Data;
 using TaskManagerProject.Models;
+using TaskManagerProject.Services;
 
 namespace TaskManagerProject.Controllers
 {
     public class TaskManagersController : Controller
     {
         private readonly TaskManagerProjectContext _context;
+        private readonly TaskManagerService _taskManagerService;
 
-        public TaskManagersController(TaskManagerProjectContext context)
+        public TaskManagersController(TaskManagerProjectContext context, TaskManagerService taskManagerService)
         {
             _context = context;
+            _taskManagerService = taskManagerService;
         }
 
         // GET: TaskManagers
         public async Task<IActionResult> Index()
         {
-              return _context.TaskManager != null ? 
-                          View(await _context.TaskManager.ToListAsync()) :
-                          Problem("Entity set 'TaskManagerProjectContext.TaskManager'  is null.");
+            return View(await _taskManagerService.GetAllTasksAsync());
         }
 
         // GET: TaskManagers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.TaskManager == null)
+            if (id == null)
             {
-                return NotFound();
+                return NotFound("The requested task or the task database is unavailable.");
             }
 
-            var taskManager = await _context.TaskManager
-                .FirstOrDefaultAsync(m => m.ID == id);
+            var taskManager = await _taskManagerService.GetTaskByIdAsync(id.Value);
             if (taskManager == null)
             {
-                return NotFound();
+                return NotFound($"No task found with ID {id}.");
             }
 
             return View(taskManager);
         }
 
-        // GET: TaskManagers/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
         // POST: TaskManagers/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,TaskName,TaskDate,TaskDescription,AssignedTo,Priority,Status,DueDate,EstimatedTime,ActualTime,Category,Tags")] TaskManager taskManager)
+        public async Task<IActionResult> Create(TaskManager taskManager)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(taskManager);
-                await _context.SaveChangesAsync();
+                await _taskManagerService.AddTaskAsync(taskManager);
                 return RedirectToAction(nameof(Index));
             }
             return View(taskManager);
         }
 
-        // GET: TaskManagers/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null || _context.TaskManager == null)
-            {
-                return NotFound();
-            }
-
-            var taskManager = await _context.TaskManager.FindAsync(id);
-            if (taskManager == null)
-            {
-                return NotFound();
-            }
-            return View(taskManager);
-        }
-
         // POST: TaskManagers/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,TaskName,TaskDate,TaskDescription,AssignedTo,Priority,Status,DueDate,EstimatedTime,ActualTime,Category,Tags")] TaskManager taskManager)
+        public async Task<IActionResult> Edit(int id, TaskManager taskManager)
         {
             if (id != taskManager.ID)
             {
@@ -99,12 +72,11 @@ namespace TaskManagerProject.Controllers
             {
                 try
                 {
-                    _context.Update(taskManager);
-                    await _context.SaveChangesAsync();
+                    await _taskManagerService.UpdateTaskAsync(taskManager);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TaskManagerExists(taskManager.ID))
+                    if (!_taskManagerService.TaskExists(taskManager.ID))
                     {
                         return NotFound();
                     }
@@ -118,46 +90,13 @@ namespace TaskManagerProject.Controllers
             return View(taskManager);
         }
 
-        // GET: TaskManagers/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.TaskManager == null)
-            {
-                return NotFound();
-            }
-
-            var taskManager = await _context.TaskManager
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (taskManager == null)
-            {
-                return NotFound();
-            }
-
-            return View(taskManager);
-        }
-
         // POST: TaskManagers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.TaskManager == null)
-            {
-                return Problem("Entity set 'TaskManagerProjectContext.TaskManager'  is null.");
-            }
-            var taskManager = await _context.TaskManager.FindAsync(id);
-            if (taskManager != null)
-            {
-                _context.TaskManager.Remove(taskManager);
-            }
-            
-            await _context.SaveChangesAsync();
+            await _taskManagerService.DeleteTaskAsync(id);
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool TaskManagerExists(int id)
-        {
-          return (_context.TaskManager?.Any(e => e.ID == id)).GetValueOrDefault();
         }
     }
 }

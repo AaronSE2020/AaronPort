@@ -1,0 +1,25 @@
+/* Resetting some default margins */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Wrapper that encompasses everything except the footer */
+.wrapper {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -50px;
+}
+
+    /* Placeholder for pushing the footer down */
+    .wrapper:after {
+        content: "";
+        display: block;
+        height: 50px; /* equal to footer height */
+    }
+
+/* Footer styling */
+footer {
+    height: 50px;
+}

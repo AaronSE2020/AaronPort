@@ -1,32 +1,80 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using TaskManagerProject.Data;
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<TaskManagerProjectContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("TaskManagerProjectContext") ?? throw new InvalidOperationException("Connection string 'TaskManagerProjectContext' not found.")));
+using Microsoft.ReverseProxy.Abstractions;
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
 
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+internal class Program
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    private static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
+        builder.Services.AddDbContext<TaskManagerProjectContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("TaskManagerProjectContext") ?? throw new InvalidOperationException("Connection string 'TaskManagerProjectContext' not found.")));
+
+        // Add services to the container.
+        builder.Services.AddControllersWithViews();
+        builder.Services.AddTransient<TaskManagerService>();
+
+        // Configure the reverse proxy
+        var proxyBuilder = builder.Services.AddReverseProxy();
+        proxyBuilder.LoadFromMemory(new[]
+        {
+            new ProxyRoute
+            {
+                RouteId = "api-route",
+                ClusterId = "api-cluster",
+                Match = new ProxyMatch { Path = "/api/{**catch-all}" }
+            }
+        }, new[]
+        {
+            new Cluster
+            {
+                Id = "api-cluster",
+                Destinations = new Dictionary<string, Destination>
+                {
+                    ["api-destination"] = new Destination { Address = "https://s-install.avcdn.net/" }
+                }
+            }
+        });
+
+        var app = builder.Build();
+
+        // Configure the HTTP request pipeline.
+        if (!app.Environment.IsDevelopment())
+        {
+            app.UseExceptionHandler("/Home/Error");
+            app.UseHsts();
+        }
+
+        app.UseHttpsRedirection();
+        app.UseStaticFiles();
+
+        app.UseRouting();
+
+        app.UseAuthorization();
+
+        app.MapControllerRoute(
+            name: "default",
+            pattern: "{controller=Home}/{action=Index}/{id?}");
+
+        app.Run();
+    }
 }
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
+internal class Destination
+{
+    public string Address { get; set; }
+}
 
-app.UseRouting();
+internal class Cluster
+{
+    public string Id { get; set; }
+    public Dictionary<string, Destination> Destinations { get; set; }
+}
 
-app.UseAuthorization();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.Run();
+internal class ProxyMatch
+{
+    public string Path { get; set; }
+}
